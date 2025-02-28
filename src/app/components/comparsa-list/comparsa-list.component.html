@@ -1,0 +1,23 @@
+<h1>Lista de Comparsas</h1>
+
+<ul appDcomparsa>
+    <li *ngFor="let comparsa of comparsas">
+        {{comparsa.nombre | pcomparsa }} - {{comparsa.poblacion}} - {{comparsa.numeroComponentes}}
+    </li>
+</ul>
+<h1>Añadir Comparsa</h1>
+<input type="text" [(ngModel)]="nuevoNombre">
+<input type="text" [(ngModel)]="nuevaPoblacion">
+<input type="text" [(ngModel)]="nuevosComponentes">
+<button (click)="anadirComparsa()">Añadir Comparsa</button>
+
+<h1>Modificar o Eliminar</h1>
+<ul>
+    <li *ngFor="let comparsa of comparsas">
+        {{comparsa.nombre }} - {{comparsa.poblacion}} - {{comparsa.numeroComponentes}}
+        <button (click)="borrarComparsa(comparsa.id)">Borrar</button>
+        <button (click)="actualizarComparsa(comparsa.id)">Modificar</button>
+    </li>
+</ul>
+
+
